@@ -2,12 +2,13 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const dataRoutes = require('./routes/dataRoutes');
+
 const app = express();
-const PORT = process.env.PORT || 3000;
+
 app.use(express.json());
 
 const loadData = () => {
-  const filePath = path.resolve(__dirname, '../data/data.json');
+  const filePath = path.resolve(__dirname, '../data/dummyData.json');
   try {
     const rawData = fs.readFileSync(filePath);
     return JSON.parse(rawData);
@@ -22,6 +23,11 @@ app.use((req, res, next) => {
   next();
 });
 
+// Add a root route handler
+app.get('/', (req, res) => {
+  res.send('Welcome to the Rocketium API! Use /api/data to fetch data.');
+});
+
 app.use('/api', dataRoutes);
 
 app.use((err, req, res, next) => {
@@ -29,4 +35,5 @@ app.use((err, req, res, next) => {
   res.status(500).send('Internal Server Error');
 });
 
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`));
