@@ -36,7 +36,7 @@
 | GET        | `/api/data`                                                               |                                  | Get all the data from the Dummy JSON Data      |
 | GET        | `/api/data/filter?sortBy=version`                                         | `sortBy=version`                 | Sort the data using the `version` attribute    |
 | GET        | `/api/data/filter?filterBy=language&filterValue=hindi`                    | `filterBy=language`<br>`filterValue=hindi` | Filter the data using the `language` attribute |
-| GET        | `/api/data/filter?filterBy=name&filterValue=Neha`                       | `filterBy=name`<br>`filterValue=preeti` | Filter the data using the `name` attribute     |
+| GET        | `/api/data/filter?filterBy=name&filterValue=Neha`                       | `filterBy=name`<br>`filterValue=Neha` | Filter the data using the `name` attribute     |
 
 
 
