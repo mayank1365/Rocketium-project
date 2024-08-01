@@ -5,6 +5,7 @@
 1. Clone the repository:
    ```bash
    git clone https://github.com/mayank1365/Rocketium-project.git
+   cd Rocketium-project/
    ```
 
 2. Install dependencies:
