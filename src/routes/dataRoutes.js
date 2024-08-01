@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { processData } = require('../controllers/dataController');
-const dummyData = require('../../data/dummyData.json');
+const dummyData = require('../../data/data.json');
 
 // Middleware to attach data to the request object
 router.use((req, res, next) => {

@@ -3,11 +3,11 @@ const path = require('path');
 const fs = require('fs');
 const dataRoutes = require('./routes/dataRoutes');
 const app = express();
-
+const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 const loadData = () => {
-  const filePath = path.resolve(__dirname, '../data/dummyData.json');
+  const filePath = path.resolve(__dirname, '../data/data.json');
   try {
     const rawData = fs.readFileSync(filePath);
     return JSON.parse(rawData);
@@ -29,5 +29,4 @@ app.use((err, req, res, next) => {
   res.status(500).send('Internal Server Error');
 });
 
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`));
